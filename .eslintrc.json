@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": ["standard", "standard-jsx", "prettier"],
+  "rules": {
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "reservedFirst": true,
+        "shorthandFirst": true
+      }
+    ]
+  }
+}
