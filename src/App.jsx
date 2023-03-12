@@ -1,3 +1,7 @@
 export function App() {
-  return <div>App</div>
+  return (
+    <div className='min-h-screen bg-black text-white'>
+      <div>App</div>
+    </div>
+  )
 }
