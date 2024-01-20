@@ -1,20 +1,20 @@
 import { useEffect, useRef } from 'react'
 import YouTube from 'react-youtube'
-import { useMuteContext } from '../hooks/useMuteContext'
+import { useAudioContext } from '../hooks/useAudioContext'
 
 export function YouTubePlayer({ src, ...props }) {
   const playerRef = useRef(null)
-  const { isMuted } = useMuteContext()
+  const { audioOff } = useAudioContext()
 
   useEffect(() => {
     const player = playerRef.current.internalPlayer
 
-    if (isMuted) {
+    if (audioOff) {
       player.mute()
     } else {
       player.unMute()
     }
-  }, [isMuted])
+  }, [audioOff])
 
   const onReady = () => {
     const player = playerRef.current.internalPlayer
